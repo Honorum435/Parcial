@@ -1,0 +1,12 @@
+# Sistema operativo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores y herramientas
+.vscode/
+.idea/
+.claude/
+
+# Logs
+*.log
