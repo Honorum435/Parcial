@@ -1,0 +1,13 @@
+/* curiosidades */
+
+/* que cada dato se corra un poco al pasar el mouse */
+#curiosidades .boxed,
+#premios .boxed {
+    transition: 0.3s;
+}
+
+#curiosidades .boxed:hover,
+#premios .boxed:hover {
+    transform: translateX(6px);
+    background-color: #1d1010;
+}

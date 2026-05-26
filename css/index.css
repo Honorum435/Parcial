@@ -1,0 +1,95 @@
+/* landing del inicio */
+
+/* hero: imagen al lado del texto */
+#hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 28px;
+}
+
+#hero figure {
+    margin: 0;
+    text-align: center;
+    flex: 1 1 280px;
+}
+
+#hero img {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+#hero figcaption {
+    color: var(--texto-tenue);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 6px;
+}
+
+#hero .hero-texto {
+    flex: 1 1 320px;
+}
+
+#hero .hero-texto .btn {
+    margin-top: 16px;
+}
+
+.reproductor-musica {
+    margin-top: 20px;
+}
+
+.reproductor-musica p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.reproductor-musica audio {
+    width: 100%;
+    max-width: 360px;
+}
+
+/* ficha tecnica en columnas */
+.ficha {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* bloques que llevan a cada seccion */
+.enlaces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.enlace-card {
+    display: block;
+    text-decoration: none;
+    background-color: var(--superficie2);
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--verde);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: 0.3s;
+}
+
+.enlace-card:hover {
+    transform: translateY(-4px);
+    border-left-color: var(--rojo-claro);
+    box-shadow: 0 8px 22px rgba(31, 122, 90, 0.3);
+}
+
+.enlace-card h3 {
+    font-family: var(--titulo);
+    color: var(--verde-claro);
+    margin-bottom: 6px;
+    font-size: 1.15rem;
+}
+
+.enlace-card p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}

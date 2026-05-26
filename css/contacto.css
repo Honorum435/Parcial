@@ -1,0 +1,66 @@
+/* estilos del formulario de contacto */
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-grupo label {
+    color: var(--claro);
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background-color: var(--superficie2);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+    outline: none;
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 0 2px rgba(70,192,150,0.25);
+}
+
+/* marco en rojo los campos mal completados */
+.form-contacto input:invalid:not(:placeholder-shown),
+.form-contacto textarea:invalid:not(:placeholder-shown) {
+    border-color: #ff4d4d;
+}
+
+.form-contacto textarea {
+    resize: vertical;
+}
+
+.form-contacto .btn {
+    align-self: flex-start;
+}
+
+#redes {
+    text-align: center;
+}
+
+.redes-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}

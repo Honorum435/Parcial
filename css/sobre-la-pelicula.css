@@ -1,0 +1,6 @@
+/* sobre la pelicula */
+/* el reproductor (.video) y las tarjetas vienen de base.css */
+
+#banda-sonora .video {
+    max-width: 560px;
+}

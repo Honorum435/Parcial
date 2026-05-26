@@ -1,0 +1,341 @@
+/* colores del sitio, los dejo arriba para cambiarlos rapido */
+:root {
+    --fondo: #0c1411;
+    --superficie: #141b18;
+    --superficie2: #0e1411;
+    --oscuro: #0a100d;
+    --verde: #1f7a5a;        /* el verde del haori de Tanjiro */
+    --verde-claro: #46c096;
+    --verde-oscuro: #0f3b2c;
+    --rojo: #9b1c1c;
+    --rojo-claro: #e0473b;
+    --borde: #1f3a30;
+    --texto: #eef2f0;
+    --texto-suave: #b6c2bc;
+    --texto-tenue: #7f8d87;
+    --claro: #cfe8dd;
+    /* fuentes del sistema, sin depender de nada externo */
+    --titulo: Georgia, 'Times New Roman', 'Yu Mincho', 'Hiragino Mincho Pro', serif;
+    --texto-fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--texto-fuente);
+    /* la capa oscura encima de la imagen para que se lea bien */
+    background-image: linear-gradient(rgba(10,16,13,0.86), rgba(10,16,13,0.94)), url('../img/Kimetsu.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* header */
+header {
+    position: relative;
+    background-color: var(--oscuro);
+    padding: 20px 40px 26px;
+    border-bottom: 2px solid var(--verde);
+    margin-bottom: 34px;
+}
+
+/* el cuadrille verde/negro tipo haori abajo del header */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px;
+    height: 14px;
+    background: repeating-conic-gradient(var(--verde-oscuro) 0% 25%, transparent 0% 50%) 0 / 28px 28px;
+    background-color: #000;
+    opacity: 0.9;
+}
+
+header h1 {
+    font-family: var(--titulo);
+    font-weight: 800;
+    font-size: 2.3rem;
+    color: var(--texto);
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.kanji {
+    display: block;
+    font-size: 1.1rem;
+    letter-spacing: 8px;
+    color: var(--verde-claro);
+    margin-top: 4px;
+}
+
+/* la nav la armo como lista (mas correcto en HTML5) */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 4px 0;
+}
+
+nav a {
+    color: var(--claro);
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid var(--verde);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--verde);
+    color: #07120d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(31,122,90,0.45);
+}
+
+main {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+}
+
+main > h1 {
+    font-family: var(--titulo);
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--texto);
+    text-align: center;
+    padding: 18px;
+    background-color: var(--oscuro);
+    border: 1px solid var(--borde);
+    border-top: 3px solid var(--verde);
+    border-radius: 10px;
+    letter-spacing: 2px;
+}
+
+/* tarjeta que reuso en casi todas las secciones */
+.card {
+    position: relative;
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(31,122,90,0.25);
+}
+
+/* version con la linea de color al costado (la uso en personajes) */
+.card--accent {
+    border-left: 4px solid var(--verde);
+}
+
+.card--accent:hover {
+    border-left-color: var(--rojo-claro);
+    transform: translateY(-4px);
+}
+
+.card h2,
+main > section > h2 {
+    font-family: var(--titulo);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--texto);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* el trazo verde->rojo abajo de los titulos */
+.card h2::after,
+main > section > h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--verde-claro), var(--rojo-claro));
+}
+
+.card p {
+    color: var(--texto-suave);
+    margin-bottom: 10px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* cajita para resaltar parrafos sueltos */
+.boxed {
+    background-color: var(--superficie2);
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.boxed--bordered {
+    border-left: 3px solid var(--verde);
+}
+
+/* boton / enlace que reuso */
+.btn {
+    display: inline-block;
+    color: var(--claro);
+    background-color: transparent;
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 1px solid var(--verde);
+    border-radius: 6px;
+    font-family: var(--texto-fuente);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--verde);
+    color: #07120d;
+    transform: scale(1.04);
+    box-shadow: 0 6px 18px rgba(31,122,90,0.4);
+}
+
+/* el boton rojo (lo uso para acciones principales) */
+.btn--solid {
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+    color: #fff;
+}
+
+.btn--solid:hover {
+    background-color: var(--rojo-claro);
+    border-color: var(--rojo-claro);
+    color: #fff;
+}
+
+.card img,
+section img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 16px auto;
+}
+
+/* contenedor para iframes de video/audio (16:9 responsive), lo uso en varias paginas */
+.video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 12px;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* barra compacta de musica de ambiente (la pongo arriba de cada pagina) */
+.musica-ambiente {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background-color: var(--oscuro);
+    border: 1px solid var(--borde);
+    border-left: 4px solid var(--verde);
+    border-radius: 8px;
+    padding: 10px 16px;
+}
+
+.musica-ambiente p {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.musica-ambiente audio {
+    height: 38px;
+    flex: 1 1 240px;
+    max-width: 340px;
+}
+
+footer {
+    position: relative;
+    background-color: var(--oscuro);
+    text-align: center;
+    padding: 22px 20px;
+    color: var(--texto-tenue);
+    font-size: 0.85rem;
+    border-top: 2px solid var(--verde);
+    margin-top: 20px;
+}
+
+/* mismo cuadrille pero arriba del footer */
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -14px;
+    height: 14px;
+    background: repeating-conic-gradient(var(--verde-oscuro) 0% 25%, transparent 0% 50%) 0 / 28px 28px;
+    background-color: #000;
+    opacity: 0.9;
+}
+
+/* animaciones de entrada */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aparecerSuave {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in-up { animation: aparecer 0.6s ease both; }
+.fade-in { animation: aparecerSuave 0.8s ease both; }
+
+/* para escalonar las tarjetas que van apareciendo */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* celular */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.6rem; letter-spacing: 1px; }
+    nav a { padding: 6px 12px; font-size: 0.8rem; }
+    .card { padding: 20px; }
+}

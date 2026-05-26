@@ -1,0 +1,13 @@
+/* confirmacion.css — estilos específicos de la página de confirmación */
+
+#confirmacion {
+    text-align: center;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 24px;
+}

@@ -1,0 +1,8 @@
+/* reparto.css — estilos específicos de la página de reparto */
+
+/* Lista del reparto en dos columnas */
+.lista-reparto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+}

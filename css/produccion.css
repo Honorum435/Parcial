@@ -1,0 +1,18 @@
+/* produccion.css — estilos específicos de la página de producción */
+
+/* Datos de producción en dos columnas */
+#produccion {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+#produccion h2 {
+    grid-column: 1 / -1;
+}
+
+@media (min-width: 700px) {
+    #produccion {
+        grid-template-columns: 1fr 1fr;
+    }
+}
